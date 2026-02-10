@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrigoSmart - Drive Collaboratif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-green-600 p-4 text-white flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-bold">FrigoSmart 🧊</h1>
+        <div class="flex items-center gap-4">
+            <span id="userPoints" class="bg-white text-green-600 px-3 py-1 rounded-full text-sm font-bold">⭐ 450 pts</span>
+            <button class="bg-green-800 px-4 py-2 rounded-lg">Mon Profil</button>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <section class="bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4">1. Analysez votre frigo</h2>
+            <div class="border-dashed border-4 border-gray-200 p-10 text-center rounded-lg hover:border-green-400 transition">
+                <input type="file" id="frigoUpload" accept="image/*" class="hidden">
+                <label for="frigoUpload" class="cursor-pointer">
+                    <p class="text-gray-500">Cliquez pour uploader ou prendre une photo du frigo</p>
+                    <span class="mt-2 inline-block bg-green-500 text-white px-6 py-2 rounded">Prendre la photo</span>
+                </label>
+            </div>
+        </section>
+
+        <section id="resultsSection" class="hidden bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-green-700">2. Produits manquants détectés (IA)</h2>
+            <ul id="shoppingList" class="divide-y divide-gray-100">
+                </ul>
+            <button id="confirmOrder" class="mt-6 w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">
+                Publier la demande de Drive
+            </button>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4">3. Commandes à proximité (Gagnez des points ⭐)</h2>
+            <div id="communityFeed" class="grid gap-4">
+                <div class="bg-white p-4 border-l-4 border-orange-500 shadow-sm rounded">
+                    <p class="font-bold">Thomas - Leclerc Drive</p>
+                    <p class="text-sm text-gray-600">6 articles • Récompense : 50 pts</p>
+                    <button class="mt-2 text-blue-600 text-sm font-medium">Accepter la mission</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
